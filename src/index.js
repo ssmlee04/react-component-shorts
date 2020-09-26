@@ -150,7 +150,7 @@ export class AnalystTrends extends React.Component {
       <div>
         <div style={{ width: '100%', padding: 5, fontSize: 14 }}>
           <div style={{ color: 'darkred', fontWeight: 'bold' }}>{profile.ticker} - {profile.name} <span className='green'>Cash and Debt Analysis</span>
-            <span className='black' style={{ fontSize: 8, marginLeft: 5 }}>(unit: {unit})</span></div>
+            <span className='black' style={{ fontSize: 12, marginLeft: 5 }}>(unit: {unit})</span></div>
         </div>
         <div style={{ width: '100%' }}>
           <Bar data={data} height={180} options={options} />

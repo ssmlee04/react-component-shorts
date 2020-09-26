@@ -254,7 +254,7 @@ function (_React$Component) {
       }, "Cash and Debt Analysis"), _react["default"].createElement("span", {
         className: "black",
         style: {
-          fontSize: 8,
+          fontSize: 12,
           marginLeft: 5
         }
       }, "(unit: ", unit, ")"))), _react["default"].createElement("div", {
