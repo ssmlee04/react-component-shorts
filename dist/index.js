@@ -251,7 +251,7 @@ function (_React$Component) {
         }
       }, profile.ticker, " - ", profile.name, " ", _react["default"].createElement("span", {
         className: "green"
-      }, "Analyst Ratings"), _react["default"].createElement("span", {
+      }, "Cash and Debt Analysis"), _react["default"].createElement("span", {
         className: "black",
         style: {
           fontSize: 8,
