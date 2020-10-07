@@ -202,7 +202,7 @@ function (_React$Component) {
       var options = {
         legend: {
           labels: {
-            fontSize: 10,
+            fontSize: 12,
             boxWidth: 3
           }
         },

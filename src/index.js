@@ -109,7 +109,7 @@ export class AnalystTrends extends React.Component {
     const options = {
       legend: {
         labels: {
-          fontSize: 10,
+          fontSize: 12,
           boxWidth: 3,
         }
       },
