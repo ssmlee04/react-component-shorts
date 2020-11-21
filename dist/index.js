@@ -69,7 +69,7 @@ function (_React$Component) {
       var _this$props = this.props,
           profile = _this$props.profile,
           _this$props$imgProp = _this$props.imgProp,
-          imgProp = _this$props$imgProp === void 0 ? 'pct_inst_img' : _this$props$imgProp;
+          imgProp = _this$props$imgProp === void 0 ? 'shorts_img' : _this$props$imgProp;
       var copied = this.state.copied;
 
       if (!profile) {
@@ -86,7 +86,7 @@ function (_React$Component) {
         return _react["default"].createElement("div", {
           className: "react-components-show-button"
         }, _react["default"].createElement("img", {
-          alt: "".concat(profile.ticker, " - ").concat(profile.name, " Employees and Productivity"),
+          alt: "".concat(profile.ticker, " - ").concat(profile.name, " Shorts Analysis"),
           src: profile[imgProp].url,
           style: {
             width: '100%'
@@ -104,18 +104,18 @@ function (_React$Component) {
         }, btnText)));
       }
 
-      if (!profile || !profile.numbers || !profile.numbers.percent_institutions_ts) return null;
-      if (!profile || !profile.numbers || !profile.numbers.percent_insider_ts) return null;
-      var percent_institutions_ts = profile.numbers.percent_institutions_ts || [];
-      var percent_insider_ts = profile.numbers.percent_insider_ts || [];
-      var percent_institutions = percent_institutions_ts.map(function (d) {
+      if (!profile || !profile.numbers || !profile.numbers.short_pct_float_ts) return null;
+      if (!profile || !profile.numbers || !profile.numbers.shares_short_ts) return null;
+      var short_pct_float_ts = profile.numbers.short_pct_float_ts || [];
+      var shares_short_ts = profile.numbers.shares_short_ts || [];
+      var short_pct_float = short_pct_float_ts.map(function (d) {
         return d.v;
       });
-      var percent_insider = percent_insider_ts.map(function (d) {
+      var shares_short = shares_short_ts.map(function (d) {
         return d.v;
       });
       var data = {
-        labels: percent_institutions_ts.map(function (d) {
+        labels: short_pct_float_ts.map(function (d) {
           return _dayjs["default"].utc(d.ts).format('YYYYMM');
         }),
         datasets: [{
@@ -128,20 +128,20 @@ function (_React$Component) {
           borderWidth: 1,
           pointRadius: 2,
           pointHoverRadius: 2,
-          data: percent_institutions,
-          label: 'Percent of Institution Owned'
+          data: short_pct_float,
+          label: 'Short Percent Float'
         }, {
           yAxisID: '2',
-          type: 'line',
+          type: 'bar',
           fill: false,
-          backgroundColor: 'darkgreen',
-          borderColor: 'darkgreen',
+          backgroundColor: 'gray',
+          borderColor: 'gray',
           lineTension: 0,
           borderWidth: 1,
           pointRadius: 2,
           pointHoverRadius: 2,
-          data: percent_insider,
-          label: 'Percent of Insider Owned'
+          data: shares_short,
+          label: 'Shares Short'
         }]
       };
       var options = {
@@ -185,7 +185,7 @@ function (_React$Component) {
               show: true
             },
             ticks: {
-              fontColor: 'darkgreen',
+              fontColor: 'gray',
               fontSize: 10,
               // min: 0,
               callback: function callback(label, index, labels) {
@@ -208,7 +208,7 @@ function (_React$Component) {
         }
       }, profile.ticker, " - ", profile.name, " ", _react["default"].createElement("span", {
         className: "green"
-      }, "Institutions / Insider Analysis")), _react["default"].createElement(_reactChartjs.Bar, {
+      }, "Shorts Analysis")), _react["default"].createElement(_reactChartjs.Bar, {
         data: data,
         height: 220,
         options: options
