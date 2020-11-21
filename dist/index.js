@@ -142,7 +142,7 @@ function (_React$Component) {
       var _this$props = this.props,
           profile = _this$props.profile,
           _this$props$prop = _this$props.prop,
-          prop = _this$props$prop === void 0 ? 'balance_sheet_av' : _this$props$prop,
+          prop = _this$props$prop === void 0 ? 'balance_sheet' : _this$props$prop,
           _this$props$imgProp = _this$props.imgProp,
           imgProp = _this$props$imgProp === void 0 ? 'cash_and_debt_img' : _this$props$imgProp; // eslint-disable-next-line
 

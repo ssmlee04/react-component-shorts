@@ -1,5 +1,5 @@
 {
-  "name": "react-component-debts",
+  "name": "react-component-percent-owned",
   "dependencies": {
     "chart.js": "^2.8.0",
     "dayjs": "^1.8.36",

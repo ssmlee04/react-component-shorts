@@ -78,7 +78,7 @@ export class AnalystTrends extends React.Component {
   }
 
   render() {
-    const { profile, prop = 'balance_sheet_av', imgProp = 'cash_and_debt_img' } = this.props;
+    const { profile, prop = 'balance_sheet', imgProp = 'cash_and_debt_img' } = this.props;
     // eslint-disable-next-line
     const initialData = _.filter(_.get(profile, `${prop}.data`, []), d => d.ta).slice(-12);
     const { copied } = this.state;
