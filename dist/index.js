@@ -124,7 +124,7 @@ function (_React$Component) {
           fill: false,
           backgroundColor: 'darkred',
           borderColor: 'darkred',
-          lineTension: 0,
+          lineTension: 0.5,
           borderWidth: 1,
           pointRadius: 2,
           pointHoverRadius: 2,
@@ -136,7 +136,7 @@ function (_React$Component) {
           fill: false,
           backgroundColor: 'gray',
           borderColor: 'gray',
-          lineTension: 0,
+          lineTension: 0.5,
           borderWidth: 1,
           pointRadius: 2,
           pointHoverRadius: 2,
@@ -225,10 +225,10 @@ function (_React$Component) {
         }
       }, "@earningsfly"), " with ", _react["default"].createElement("span", {
         style: {
-          fontSize: 16,
+          fontSize: 8,
           color: 'red'
         }
-      }, "\u2764\uFE0F")));
+      }, "\u2764\uD83D\uDE80")));
     }
   }]);
 
