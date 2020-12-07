@@ -189,7 +189,7 @@ function (_React$Component) {
               show: true
             },
             ticks: {
-              fontColor: 'darkgray',
+              fontColor: 'gray',
               fontSize: 8,
               // min: 0,
               callback: function callback(label, index, labels) {
@@ -227,7 +227,7 @@ function (_React$Component) {
         }
       }, "@earningsfly"), " with ", _react["default"].createElement("span", {
         style: {
-          fontSize: 8,
+          fontSize: 16,
           color: 'red'
         }
       }, "\uD83D\uDE80")));
