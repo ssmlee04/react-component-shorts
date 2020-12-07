@@ -69,8 +69,8 @@ export class NumberOfEmployees extends React.Component {
         yAxisID: '2',
         type: 'bar',
         fill: false,
-        backgroundColor: 'lightgray',
-        borderColor: 'lightgray',
+        backgroundColor: 'darkgray',
+        borderColor: 'darkgray',
         lineTension: 0.3,
         pointBackgroundColor: 'white',
         borderWidth: 1,
@@ -124,7 +124,7 @@ export class NumberOfEmployees extends React.Component {
                   show: true
                 },
                 ticks: {
-                  fontColor: 'lightgray',
+                  fontColor: 'darkgray',
                   fontSize: 8,
                   // min: 0,
                   callback: function(label, index, labels) {

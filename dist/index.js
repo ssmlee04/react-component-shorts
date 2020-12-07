@@ -135,8 +135,8 @@ function (_React$Component) {
           yAxisID: '2',
           type: 'bar',
           fill: false,
-          backgroundColor: 'lightgray',
-          borderColor: 'lightgray',
+          backgroundColor: 'darkgray',
+          borderColor: 'darkgray',
           lineTension: 0.3,
           pointBackgroundColor: 'white',
           borderWidth: 1,
@@ -189,7 +189,7 @@ function (_React$Component) {
               show: true
             },
             ticks: {
-              fontColor: 'lightgray',
+              fontColor: 'darkgray',
               fontSize: 8,
               // min: 0,
               callback: function callback(label, index, labels) {
