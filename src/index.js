@@ -106,7 +106,7 @@ export class NumberOfEmployees extends React.Component {
                   show: true
                 },
                 ticks: {
-                  fontColor: 'darkred',
+                  fontColor: 'crimson',
                   maxTicksLimit: 6,
                   stepSize: 0.01,
                   fontSize: 8,
@@ -124,7 +124,7 @@ export class NumberOfEmployees extends React.Component {
                   show: true
                 },
                 ticks: {
-                  fontColor: 'gray',
+                  fontColor: 'lightgray',
                   fontSize: 8,
                   // min: 0,
                   callback: function(label, index, labels) {

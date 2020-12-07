@@ -172,7 +172,7 @@ function (_React$Component) {
               show: true
             },
             ticks: {
-              fontColor: 'darkred',
+              fontColor: 'crimson',
               maxTicksLimit: 6,
               stepSize: 0.01,
               fontSize: 8,
@@ -189,7 +189,7 @@ function (_React$Component) {
               show: true
             },
             ticks: {
-              fontColor: 'gray',
+              fontColor: 'lightgray',
               fontSize: 8,
               // min: 0,
               callback: function callback(label, index, labels) {
