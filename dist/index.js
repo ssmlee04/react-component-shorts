@@ -116,8 +116,9 @@ function (_React$Component) {
       });
       var data = {
         labels: short_pct_float_ts.map(function (d) {
-          return _dayjs["default"].utc(d.ts).format('YYYYMM');
+          return (0, _dayjs["default"])(d.ts).format('YYYYMM');
         }),
+        // labels: short_pct_float_ts.map(d => dayjs.utc(d.ts).format('YYYYMM')),
         datasets: [{
           yAxisID: '1',
           type: 'line',
@@ -126,8 +127,8 @@ function (_React$Component) {
           borderColor: 'crimson',
           lineTension: 0.3,
           pointBackgroundColor: 'white',
-          borderWidth: 1,
-          pointRadius: 2,
+          borderWidth: 1.5,
+          pointRadius: 3,
           pointHoverRadius: 2,
           data: short_pct_float,
           label: 'Short Percent Float'
@@ -140,8 +141,8 @@ function (_React$Component) {
           lineTension: 0.3,
           pointBackgroundColor: 'white',
           borderWidth: 1,
-          pointRadius: 2,
-          pointHoverRadius: 2,
+          pointRadius: 3,
+          pointHoverRadius: 5,
           data: shares_short,
           label: 'Shares Short'
         }]

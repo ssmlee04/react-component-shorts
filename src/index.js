@@ -50,8 +50,10 @@ export class Shorts extends React.Component {
     const shares_short_ts = profile.numbers.shares_short_ts || [];
     const short_pct_float = short_pct_float_ts.map(d => d.v);
     const shares_short = shares_short_ts.map(d => d.v);
+    
     const data = {
-      labels: short_pct_float_ts.map(d => dayjs.utc(d.ts).format('YYYYMM')),
+      labels: short_pct_float_ts.map(d => dayjs(d.ts).format('YYYYMM')),
+      // labels: short_pct_float_ts.map(d => dayjs.utc(d.ts).format('YYYYMM')),
       datasets: [{
         yAxisID: '1',
         type: 'line',
@@ -60,8 +62,8 @@ export class Shorts extends React.Component {
         borderColor: 'crimson',
         lineTension: 0.3,
         pointBackgroundColor: 'white',
-        borderWidth: 1,
-        pointRadius: 2,
+        borderWidth: 1.5,
+        pointRadius: 3,
         pointHoverRadius: 2,
         data: short_pct_float,
         label: 'Short Percent Float'
@@ -74,8 +76,8 @@ export class Shorts extends React.Component {
         lineTension: 0.3,
         pointBackgroundColor: 'white',
         borderWidth: 1,
-        pointRadius: 2,
-        pointHoverRadius: 2,
+        pointRadius: 3,
+        pointHoverRadius: 5,
         data: shares_short,
         label: 'Shares Short'
       }]
