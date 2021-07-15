@@ -19,6 +19,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -53,23 +55,18 @@ function (_React$Component) {
   }
 
   _createClass(Shorts, [{
-    key: "shouldComponentUpdate",
-    value: function shouldComponentUpdate(nextProps, nextState) {
-      var profile = this.props.profile;
-      if (!profile) return true;
-      if (nextState.copied) return true;
-      if (profile.ticker !== nextProps.profile.ticker) return true;
-      return false;
-    }
-  }, {
     key: "render",
     value: function render() {
-      var _this2 = this;
+      var _this2 = this,
+          _ticks,
+          _ticks2;
 
       var _this$props = this.props,
           profile = _this$props.profile,
           _this$props$imgProp = _this$props.imgProp,
-          imgProp = _this$props$imgProp === void 0 ? 'shorts_img' : _this$props$imgProp;
+          imgProp = _this$props$imgProp === void 0 ? 'shorts_img' : _this$props$imgProp,
+          _this$props$theme = _this$props.theme,
+          theme = _this$props$theme === void 0 ? 'light' : _this$props$theme;
       var copied = this.state.copied;
 
       if (!profile) {
@@ -114,6 +111,8 @@ function (_React$Component) {
       var shares_short = shares_short_ts.map(function (d) {
         return d.v;
       });
+      var gridColor = theme === 'light' ? 'rgba(80, 80, 80, 0.1)' : 'rgba(255, 255, 255, 0.2)';
+      var fontColor = theme === 'light' ? '#222222' : '#dddddd';
       var data = {
         labels: short_pct_float_ts.map(function (d) {
           return (0, _dayjs["default"])(d.ts).format('YYYYMM');
@@ -151,13 +150,18 @@ function (_React$Component) {
         legend: {
           labels: {
             fontSize: 12,
+            fontColor: fontColor,
             boxWidth: 10
           }
         },
         scales: {
           xAxes: [{
             ticks: {
-              fontSize: 12
+              fontSize: 12,
+              fontColor: fontColor
+            },
+            gridLines: {
+              color: gridColor
             },
             barPercentage: 0.4
           }],
@@ -172,15 +176,14 @@ function (_React$Component) {
             labels: {
               show: true
             },
-            ticks: {
+            ticks: (_ticks = {
               fontColor: 'crimson',
               maxTicksLimit: 6,
               stepSize: 0.01,
-              fontSize: 12,
-              callback: function callback(label, index, labels) {
-                return Math.floor(label);
-              }
-            }
+              fontSize: 12
+            }, _defineProperty(_ticks, "fontColor", fontColor), _defineProperty(_ticks, "callback", function callback(label, index, labels) {
+              return Math.floor(label);
+            }), _ticks)
           }, {
             type: 'linear',
             display: true,
@@ -189,14 +192,15 @@ function (_React$Component) {
             labels: {
               show: true
             },
-            ticks: {
+            gridLines: {
+              color: gridColor
+            },
+            ticks: (_ticks2 = {
               fontColor: 'gray',
-              fontSize: 12,
-              // min: 0,
-              callback: function callback(label, index, labels) {
-                return Math.floor(label);
-              }
-            }
+              fontSize: 12
+            }, _defineProperty(_ticks2, "fontColor", fontColor), _defineProperty(_ticks2, "callback", function callback(label, index, labels) {
+              return Math.floor(label);
+            }), _ticks2)
           }]
         }
       };
@@ -207,31 +211,32 @@ function (_React$Component) {
           fontSize: 12
         }
       }, _react["default"].createElement("div", {
+        className: "theme-darkred-".concat(theme),
         style: {
-          color: 'darkred',
           fontWeight: 'bold'
         }
-      }, profile.ticker, " - ", profile.name, " ", _react["default"].createElement("span", {
-        className: "green"
-      }, "Shorts Analysis")), _react["default"].createElement(_reactChartjs.Bar, {
+      }, profile.ticker, " - ", profile.name, "\xA0\xA0", _react["default"].createElement("span", {
+        className: "theme-green-".concat(theme)
+      }, "Short Analysis")), _react["default"].createElement(_reactChartjs.Bar, {
         data: data,
-        height: 170,
+        height: 180,
         options: options
       }), _react["default"].createElement("div", {
         style: {
           fontSize: 12,
-          color: 'gray'
+          padding: 5,
+          paddingTop: 2
         }
-      }, "Generated by ", _react["default"].createElement("span", {
-        style: {
-          color: 'darkred'
-        }
+      }, "Generated by ", _react["default"].createElement("a", {
+        href: "https://twitter.com/earningsfly",
+        target: "_blank",
+        className: "theme-darkred-".concat(theme)
       }, "@earningsfly"), " with ", _react["default"].createElement("span", {
         style: {
           fontSize: 16,
           color: 'red'
         }
-      }, "\uD83D\uDE80")));
+      }, "\u2764\uFE0F")));
     }
   }]);
 
